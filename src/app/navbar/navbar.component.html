@@ -1,0 +1,4 @@
+<button (click)="buttonClick($event)">Click!</button>
+<ul style="display: flex;list-style: none;" *ngIf="hideMenu">
+    <li *ngFor="let menuitem of menuItems" [routerLink]=menuitem.link>{{menuitem.name}}</li>
+</ul>
