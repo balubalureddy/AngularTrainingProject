@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   constructor() { }
-
+  @Input() menuItem:any;
+  @Output() handelOutput = new EventEmitter<string>();
   public name : string;
   public hideMenu: boolean=true;
   menuItems: any =[
@@ -16,13 +17,16 @@ export class NavbarComponent implements OnInit {
     {name:"About Us",link:"/About"},
     {name:"Contact",link:"/contact"},
   ]
+  arr=[1,2,3,4]
 
   ngOnInit(): void {
     this.name = "Angular";
+    console.log(this.menuItem);
+    this.menuItems.push(this.menuItem);
   }
 
   buttonClick(e){
-    this.hideMenu = !this.hideMenu;
+    this.handelOutput.emit("am from navbar");
   }
 
 }

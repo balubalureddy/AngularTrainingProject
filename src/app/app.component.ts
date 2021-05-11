@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sampleAngular';
+  item = {name:"services",link:"/service"}
+
+  sendOutput(e){
+    alert(e);
+  }
 }
