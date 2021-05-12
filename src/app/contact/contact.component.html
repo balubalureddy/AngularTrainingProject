@@ -1,1 +1,33 @@
-<p>contact works!</p>
+<h1>Employee Registration</h1>
+<form [formGroup]="empRegistration" (ngSubmit)="submitEmpReg()">
+    <div class="Firstname">
+        <span><label>First Name: </label></span>
+        <span><input type="text" name="firstName" placeholder="First Name" [(ngModel)]="empReg.fname" formControlName="firstName"></span>
+    </div>
+    <div class="LastName">
+        <span><label>Last Name: </label></span>
+        <span><input type="text" name="lastName" placeholder="Last Name" [(ngModel)]="empReg.lname" formControlName="lastName"></span>
+    </div>
+    <div class="Email">
+        <span><label>Email: </label></span>
+        <span><input type="text" name="email" placeholder="Email" [(ngModel)]="empReg.email" formControlName="email"></span>
+    </div>
+    <div class="Gender">
+        <span><label>Gender: </label></span>
+        <span><input type="radio" name="gender" value="male" [(ngModel)]="empReg.gender" formControlName="gender"><label>Male</label></span>
+        <span><input type="radio" name="gender" value="female" [(ngModel)]="empReg.gender" formControlName="gender"><label>Female</label></span>
+    </div>
+    <!-- <div>
+        <span><label>Location: </label></span>
+        <span><select value="" [(ngModel)]="empReg.loc">
+            <option value="hyderabad">Hyderabad</option>
+            <option value="bengaluru">bengaluru</option>
+        </select></span>
+    </div> -->
+    <button type="submit">submit</button>
+</form>
+<p>{{empReg.fname}}</p>
+<p>{{empReg.lname}}</p>
+<p>{{empReg.email}}</p>
+<p>{{empReg.gender}}</p>
+<!-- <p>{{empReg.loc}}</p> -->
